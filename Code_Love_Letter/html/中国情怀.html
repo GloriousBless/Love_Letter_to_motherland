@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代码情书</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/中国情怀.css">
+    <script src="../js/jQuery.js"></script>
+    <script src="../js/中国情怀.js"></script>
+</head>
+
+<body>
+    <canvas class="raining">
+    </canvas>
+    <script>
+        var canvas = document.querySelector(".raining");
+        var w, h;
+        ~~ function setSize() { //定义canvas的宽高，让他跟浏览器的窗口的宽高相同
+            window.onresize = arguments.callee;
+            w = window.innerWidth;
+            h = window.innerHeight;
+            canvas.width = w;
+            canvas.height = h;
+        }();
+
+        var canCon = canvas.getContext("2d"); //建立2d画板
+        var arain = []; //新建数组,储存雨滴
+        //
+        function random(min, max) { //返回最小值到最大值之间的值
+            return Math.random() * (max - min) + min;
+        }
+
+        function rain() {};
+        rain.prototype = {
+            init: function() { //变量初始化
+                this.x = random(0, w); //在0-w之间生成雨滴
+                this.vx = 0.1;
+                this.y = h; //起点在下面
+                this.vy = random(4, 5);
+                this.h = random(0.1 * h, 0.4 * h); //地板高度
+                this.r = 1; //雨滴绽放的半径
+                this.vr = 1;
+                this.colos = Math.floor(Math.random() * 1000);
+            },
+            draw: function() {
+
+                if (this.y > this.h) {
+                    canCon.beginPath(); //拿起一支笔
+                    canCon.fillStyle = '#' + this.colos; //笔墨的颜色，随机变化的颜色
+                    canCon.fillRect(this.x, this.y, 3, 10); //想象画一个雨滴
+                } else {
+                    canCon.beginPath(); //拿起一支笔
+                    canCon.strokeStyle = '#' + this.colos; //笔墨的颜色
+                    canCon.arc(this.x, this.y, this.r, 0, Math.PI * 2); //想象画一个圆
+                    canCon.stroke(); //下笔作画
+                }
+            },
+            move: function() { //重点是判断和初始位置。其他无大变化
+                if (this.y > this.h) { //位置判断
+                    this.y += -this.vy; //从下往上				
+
+                } else {
+                    if (this.r < 100) { //绽放的大小
+                        this.r += this.vr;
+                    } else {
+                        this.init(); //放完后回归变量原点
+                    }
+
+                }
+                this.draw(); //开始作画
+
+            }
+        }
+
+        function createrain(num) {
+            for (var i = 0; i < num; i++) {
+                setTimeout(function() {
+                        var raing = new rain(); //创建一滴雨
+                        raing.init();
+                        raing.draw();
+                        arain.push(raing);
+                    }, 800 * i) //每隔150ms下落一滴雨
+            }
+        }
+        createrain(10); //雨滴数量
+        setInterval(function() {
+            canCon.fillStyle = "rgba(0,0,0,0.1)"; //拿起一支透明0.13的笔		
+            canCon.fillRect(0, 0, w, h); //添加蒙版 控制雨滴长度
+            for (var item of arain) {
+                //item of arain指的是数组里的每一个元素
+                //item in arain指的是数组里的每一个元素的下标（包括圆形连上的可遍历元素）
+                item.move(); //运行整个move事件
+            }
+        }, 1000 / 60); //上升时间
+    </script>
+    <!-- 烟花 -->
+
+    <div class="body-wrap">
+        <!-- # component starts -->
+        <div style="border-radius: 10px;" class="pres-timeline" id="this-timeline">
+            <!-- ###   -->
+            <!--   <div class="periods-section"> -->
+            <div style="border-radius: 10px;" class="periods-container">
+                <section class="period-single" period="period1">
+                    <h4 class="year">我爱你祖国</h4>
+                    <h2 class="title">寸寸山河梦，昭昭赤子心</h2>
+                    <p>我们生在红旗下，长在春风里，目光所至皆为华夏，五星闪耀皆为信仰。春有盼望和辉煌，夏有火红和热情，秋有金黄和成熟，冬有雪白和宁静，祖国四季皆似锦。
+                    </p>
+                </section>
+                <section class="period-single" period="period2">
+                    <h4 class="year">祖国母亲</h4>
+                    <h2 class="title">爱国始终是青春的底色</h2>
+                    <p>五千年的风雨也动摇不了您在孩子们心中的地位，五千年的风霜让您更加富强，五千年的世事让我们为您骄傲
+                    </p>
+                    <p>世上最美丽的画卷描绘的是祖国的大好河山；世上最动人的诗篇歌颂的是祖国永恒的春天。啊，祖国我爱你！
+                    </p>
+                </section>
+                <section class="period-single" period="period3">
+                    <h4 class="year">愿祖国繁荣昌盛</h4>
+                    <h2 class="title">以我之浪花，筑国之巨浪</h2>
+                    <p>我爱我的祖国，就像星河与焰火，相互包裹，永不失落。延乔路的尽头是繁华大国。
+                    </p>
+                </section>
+                <div class="btn-back"></div>
+                <div class="btn-next"></div>
+            </div>
+            <!--   </div> -->
+            <!-- ### -->
+            <!--   <div class="timeline-section"> -->
+            <div class="timeline-container">
+                <!--     # timeline graphic place holder - fill with js -->
+                <div class="timeline"></div>
+
+                <div class="btn-back"><svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h30v30H0z"/><path fill="#D8D8D8" fill-rule="evenodd" d="M11.828 15l7.89-7.89-2.83-2.828L6.283 14.89l.11.11-.11.11L16.89 25.72l2.828-2.83"/></svg></div>
+                <div class="btn-next"><svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h30v30H0z"/><path fill="#D8D8D8" fill-rule="evenodd" d="M18.172 14.718l-7.89-7.89L13.112 4l10.606 10.607-.11.11.11.11-10.608 10.61-2.828-2.83 7.89-7.89"/></svg></div>
+            </div>
+            <!--   </div> -->
+            <!-- ### -->
+            <!--   <div class="cards-section"> -->
+            <div class="cards-container">
+                <section class="card-single active" period="period1">
+                    <h4 class="year">Blessings</h4>
+                    <h2 class="title">我歌颂祖国的壮丽山川</h2>
+                    <div class="content">
+                        <img src="../imag/美好河山.jpg" alt="" />
+                        <p><strong>长城如万里边疆，象征着中华民族热血的刚强，让人望而生畏。</strong></p>
+                    </div>
+                </section>
+                <section class="card-single" period="period1">
+                    <h4 class="year">Blessings</h4>
+                    <h2 class="title">我歌颂祖国的涛涛江河</h2>
+                    <div class="content">
+                        <img src="../imag/美好江河.jpg" alt="" />
+                        <p><strong>我眼里的祖国江河是宏伟的，是壮观的，是沁人心脾的，洗刷着我的灵魂，带给我一种旷世之感</strong></p>
+                    </div>
+                </section>
+                <section class="card-single" period="period2">
+                    <h4 class="year">Blessings</h4>
+                    <h2 class="title">永爱祖国</h2>
+                    <div class="content">
+                        <p><strong>爱国就是苏武的持节南望。当大漠的风将他的手雕刻得龟裂，当大漠的霜雪染白了他的双鬓，他依然手握节毛尽落的旄节，眼睛跨越千山万水，寻找着回家的方向。 华夏子孙只有手挽手，心连心，时刻铭记祖国母亲的恩情，永远记住不可一世的清王朝覆灭的教训，勤奋学习，互相帮助，万众一心为国效力，就无愧于炎黄子孙这个荣誉，无愧于中华民族这个称呼。</strong>
+                        </p>
+                        <p><strong>我正增加百倍的勇气和信心，奋励自励，为我们伟大祖国与伟大人民继续奋斗。</strong></p>
+                    </div>
+                </section>
+                <section class="card-single" period="period1">
+                    <h4 class="year">Blessings</h4>
+                    <h2 class="title">山河虽无恙，吾辈当自强</h2>
+                    <div class="content">
+                        <p><strong>岁月峥嵘，山河依旧。安庆的杜鹃花漫山遍野，像中国青年人不会弯曲的脊梁，永远屹立在山岗</strong></p>
+                    </div>
+                </section>
+                <section class="card-single" period="period3">
+                    <h4 class="year">Blessings</h4>
+                    <h2 class="title">欣逢盛世，当不负盛世</h2>
+                    <div class="content">
+                        <img src="../imag/中国青年2.jpg" alt="" />
+                        <p><strong>中国青年要努力拼搏，以梦为马，不负韶华，为祖国繁荣昌盛奉献出自己的一份力量</strong></p>
+                    </div>
+                </section>
+            </div>
+            <!--   </div> -->
+            <!-- ###   -->
+        </div>
+        <!-- # component ends -->
+    </div>
+    <div class="backimg">
+        <video controls="controls" autoplay muted="false">
+            <source src="../青年.mp4" >
+        </video>
+    </div>
+    <!-- <script>
+        var video = document.querySelector('video');
+        video.addEventListener('mouseover', function() {
+            video.play();
+        })
+    </script> -->
+
+</body>
+
+</html>

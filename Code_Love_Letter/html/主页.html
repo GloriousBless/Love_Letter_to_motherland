@@ -1,0 +1,212 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代码情书</title>
+    <link rel="stylesheet" type="text/css" href="../css/主页.css">
+    <link rel="stylesheet" type="text/css" href="../css/little_heart.css">
+    <link rel="stylesheet" type="text/css" href="../css/留言板.css">
+    <link rel="stylesheet" href="../css/图片手风琴.css">
+    <script src="../js/jQuery.js"></script>
+    <script src="../js/留言板.js"></script>
+    <script src="../js/animate.js"></script>
+    <script src="../js/主页.js"></script>
+    <script src="../js/图片手风琴.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+
+            <li>
+                <a href="#home"><strong>中国光芒</strong></a></li>
+            <li> <a href="#information"><strong>爱意祖国</strong></a></li>
+            <li> <a href="#staff"><strong>强国有我</strong></a></li>
+            <li><a href="#world"><strong>留言祖国</strong></a></li>
+            <li><a href="#media"><strong>祖国心声</strong></a></li>
+        </nav>
+
+        <section id="home" style="background-color: lightblue;">
+            <div class="main">
+                <a href="../html/加载2.html" href="javascript:history.back(-1)">
+                    <h1>满目繁华如今是，却是风雨亦同州；</h1>
+                    <h1 style="text-indent: 1em;">神州大地繁花锦，辉煌成就促玉成。</h1>
+                    <h3 style="text-indent: 3em; color: rgb(251, 93, 93);">———>>点击揭晓祖国辉煌成果
+                    </h3>
+                </a>
+                <p class="load">Chinese Light</p>
+            </div>
+            <ul id="first">
+                <li style="top: -150px;"><img src="../最可爱的人/one.jpg"></li>
+                <ul>
+                    <li style="top: -80px;"><img src="../最可爱的人/two.jpg"></li>
+                    <ul>
+                        <li style="top: -10px;"><img src="../最可爱的人/three.jpg"></li>
+                        <ul>
+                            <li style="top: 60px;"><img src="../最可爱的人/four.jpg"></li>
+                            <ul>
+                                <li style="top: 130px;"><img src="../最可爱的人/five.jpg"></li>
+                            </ul>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+        <section id="information" style="background-color: rgb(250, 210, 217);">
+            <div class="main">
+                <h1 id="love">爱意东升西落，浪漫至死不渝，这是一封对祖国的情书，点击打开——>></h1>
+                <p class="load">Love the motherland</p>
+            </div>
+
+            <a href="../html/信封.html" href="javascript:history.back(-1)"><img id="letter" src="../imag/爱心填充.gif"></a>
+            <img class='bigwhite' width="100px" height="100px" src="../imag/大白.png">
+        </section>
+        <!-- <script>
+            var str = '爱意东升西落，浪漫至死不渝，这是一封对祖国的情书，点击打开——>>';
+            var i = 0;
+            function typing() {
+                var hTyping = document.getElementById('love');
+                if (i <= str.length) {
+                    hTyping.innerHTML = str.slice(0, i++) + '_';
+                    setTimeout('typing()', 130);
+                } else {
+                    hTyping.innerHTML = str;
+                }
+            }
+            typing();
+        </script> -->
+        <section id="staff">
+            <div class="rabbit">
+                <img class="im1" src="../imag/那兔1.gif">
+                <img class="im2" src="../imag/那兔2.gif">
+                <img class="im3" src="../imag/那兔3.gif">
+            </div>
+            <h3 class="h3x">捐躯赴国难，视死忽如归。</h3>
+            <h3 class="h3y">无畏前方险，只为国家先。</h3>
+            <h3 class="h3z">如今辉煌是，豪杰壮缅怀。</h3>
+            <div class="trans1">
+                <h1>——>></h1>
+            </div>
+            <div class="trans2">
+                <h1>——>></h1>
+            </div>
+            <div class="trans3" style="border: 5 solid #ffffff;">
+                <a href="../html/中国情怀.html" href="javascript:history.back(-1)">
+                    <h1>——>>点击探索爱国情怀
+                        <<——</h1>
+                </a>
+            </div>
+            <div class='heart one'></div>
+            <div class='heart two'></div>
+            <div class='heart three'></div>
+            <div class='heart four'></div>
+            <div class='heart five'></div>
+            <div class='heart six'></div>
+        </section>
+        <section id="world" style="background-color:  lightblue;">
+            <div id="container">
+                <div class="comment-box">
+                    <div id="close">
+                        <button id="btn-close">关闭留言</button>
+                    </div>
+                    <header class="content">
+                        <h2>留言板</h2>
+                    </header>
+                </div>
+                <div class="content"> <input type="text" id="name" placeholder="请输入你的姓名"></div>
+                <div class="content">
+                    <textarea name="comment" id="comment" cols="30" rows="4" placeholder="请输入您的内容......"></textarea>
+                </div>
+                <div class="content">
+                    <button id="btn-submit">留言</button>
+                </div>
+                <div class="list">
+                    <div>
+                        <h2 style="padding: 10px;">留言列表</h2>
+                        <div id="comments">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="media" style="background-color: pink;">
+            <!-- <div class="main">
+
+                <h1>祖国心声</h1>
+
+            </div> -->
+
+            <div class="contain">
+
+                <div class="item active" style="background-image: url(../imag/美好江河.jpg);">
+                    <div class="shadow"></div>
+                    <div class="cont">
+                        <div class="icon">
+                            <i class="fa fa-sun-o"></i>
+                        </div>
+                        <div class="text">
+                            <div class="tit">山河辽阔</div>
+                            <div class="sub">这是祖国的土地</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(../imag/红旗.jpg);">
+                    <div class="shadow"></div>
+                    <div class="cont">
+                        <div class="icon">
+                            <i class="fa fa-cloud"></i>
+                        </div>
+                        <div class="text">
+                            <div class="tit">五星红旗</div>
+                            <div class="sub">这是中国的标志</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(../imag/中国青年.jpg);">
+                    <div class="shadow"></div>
+                    <div class="cont">
+                        <div class="icon">
+                            <i class="fa fa-tint"></i>
+                        </div>
+                        <div class="text">
+                            <div class="tit">中国青年</div>
+                            <div class="sub">这是中国的花朵</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(../imag/爱国情.png);">
+                    <div class="shadow"></div>
+                    <div class="cont">
+                        <div class="icon">
+                            <i class="fa fa-bolt"></i>
+                        </div>
+                        <div class="text">
+                            <div class="tit">爱国情怀</div>
+                            <div class="sub">这是民族的精神</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(../imag/爱国.png);">
+                    <div class="shadow"></div>
+                    <div class="cont">
+                        <div class="icon">
+                            <i class="fa fa-snowflake-o"></i>
+                        </div>
+                        <div class="text">
+                            <div class="tit">砥砺前行</div>
+                            <div class="sub">这是我们的态度</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <img class="i1" src="imag/那兔.png">
+                <img class="i2" src="imag/那兔-熊.png"> -->
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

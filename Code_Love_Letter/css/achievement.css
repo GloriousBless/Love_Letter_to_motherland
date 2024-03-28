@@ -1,0 +1,53 @@
+#pos {
+    position: absolute;
+    top: 332px;
+    height: 1000px;
+    opacity: 0;
+}
+
+.size {
+    position: absolute;
+    display: inline;
+    height: 100%;
+    width: 295px;
+    list-style: none;
+}
+
+#pos img {
+    /* position: relative; */
+    position: absolute;
+    width: 295px;
+    height: 341px;
+    left: 65px;
+    /* top: 120px; */
+    top: 83px;
+    border-radius: 10px 10px 0 0;
+    margin: 0;
+    font-size: 0;
+}
+
+.move {
+    position: absolute;
+    /* position: relative; */
+    width: 295px;
+    height: 190px;
+    left: 65px;
+    top: 410px;
+    background-color: rgb(210, 65, 65);
+    border-radius: 0 0 10px 10px;
+    font-family: "SimHei";
+    font-style: oblique;
+    color: white;
+    font-size: 16px;
+    margin: 0;
+}
+
+.pos1 {
+    position: absolute;
+    left: 550px;
+}
+
+.pos2 {
+    position: absolute;
+    left: 1098px;
+}

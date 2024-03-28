@@ -1,0 +1,170 @@
+.box {
+    height: 100vh;
+    min-height: 520px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/*设置大ul的大小及定位*/
+
+.content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*设置大li样式*/
+
+.content li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-clip: border-box;
+    background-size: cover;
+}
+
+
+/*将第一张图片后的图片隐藏*/
+
+#li1~li {
+    display: none;
+}
+
+
+/*设置大li背景图片*/
+
+#li1 {
+    background-image: url(imag/五人五角星.jpg);
+}
+
+#li2 {
+    background-image: url(imag/中国故事.jpg);
+}
+
+#li3 {
+    background-image: url(img/bg3.jpg);
+}
+
+#li4 {
+    background-image: url(img/bg4.jpg);
+}
+
+#li5 {
+    background-image: url(img/bg5.jpg);
+}
+
+
+/*点击a标签,切换大图片*/
+
+#li1:target,
+#li2:target,
+#li3:target,
+#li4:target,
+#li5:target {
+    display: block;
+}
+
+
+/*定位*/
+
+.conlist {
+    position: absolute;
+    bottom: 0;
+}
+
+
+/*设置li的样式*/
+
+.conlist li {
+    position: relative;
+    float: left;
+    width: 180px;
+    height: 150px;
+    display: block;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    margin-right: 10px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+
+/*给li设置背景颜色*/
+
+.conlist li:first-child {
+    background: lightblue;
+}
+
+.conlist li:nth-child(2) {
+    background: pink;
+}
+
+.conlist li:nth-child(3) {
+    background: rgb(221, 129, 129);
+}
+
+.conlist li:nth-child(4) {
+    background: #b35454;
+}
+
+.conlist li:last-child {
+    background: #ef9c80;
+}
+
+
+/*设置a标签的样式*/
+
+.conlist a {
+    position: absolute;
+    display: block;
+    width: 145px;
+    height: 145px;
+    border: 3px solid #fff;
+    border-radius: 75px;
+    background-position: center;
+    background-clip: border-box;
+    background-size: cover;
+    left: 10%;
+    top: -50%;
+}
+
+
+/*设置a标签的背景图片*/
+
+.a1 {
+    background-image: url(imag/五人五角星.jpg);
+}
+
+.a2 {
+    background-image: url(imag/中国故事.jpg);
+}
+
+.a3 {
+    background-image: url(img/sbg3.jpg);
+}
+
+.a4 {
+    background-image: url(img/sbg4.jpg);
+}
+
+.a5 {
+    background-image: url(img/sbg5.jpg);
+}
+
+
+/*设置字体样式*/
+
+.conlist span {
+    line-height: 220px;
+    font-family: "楷体";
+    font-size: 25px;
+    color: #fff;
+    font-weight: bold;
+}

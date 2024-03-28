@@ -1,0 +1,141 @@
+#media {
+    /* 100%窗口高度 */
+    height: 100vh;
+    /* 弹性布局 水平+垂直居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 径向渐变背景 */
+    /* background: radial-gradient(circle at top center, #718497, #29323c); */
+}
+
+#media .contain {
+    /* 弹性布局 默认水平排列 */
+    display: flex;
+    width: 90vw;
+    max-width: 900px;
+    height: 550px;
+    /* 溢出隐藏 */
+    overflow: hidden;
+}
+
+#media .contain .item {
+    /* 相对定位 */
+    position: relative;
+    width: 80px;
+    margin: 10px;
+    /* cursor: pointer; */
+    border-radius: 30px;
+    /* 保持原有尺寸比例，裁切长边 */
+    background-size: cover;
+    /* 定位背景图像为正中间 */
+    background-position: center;
+    /* 过渡效果：时长 贝塞尔曲线 */
+    transition: 1.2s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+    overflow: hidden;
+}
+
+#media .contain .item .shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    transition: 1.2s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+#media .contain .item .cont {
+    display: flex;
+    position: absolute;
+    left: 10px;
+    right: 0;
+    bottom: 10px;
+    height: 55px;
+    transition: 1.2s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+
+/* #media .contain .item .cont .icon {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(85, 189, 227, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+} */
+
+#media .contain .item:nth-child(1) .fa {
+    color: #fc6e51;
+}
+
+#media .contain .item:nth-child(2) .fa {
+    color: #ffce54;
+}
+
+#media .contain .item:nth-child(3) .fa {
+    color: #2ecc71;
+}
+
+#media .contain .item:nth-child(4) .fa {
+    color: #5d9cec;
+}
+
+#media .contain .item:nth-child(5) .fa {
+    color: #ac92ec;
+}
+
+#media .contain .item .cont .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-shadow: 2px 2px 5px rgb(238, 114, 114);
+    color: #fff;
+    font-family: "STKaiti";
+    font-size: 20px;
+    width: 100%;
+}
+
+#media .contain .item .cont .text div {
+    /* 超出显示省略号（需要设置width） */
+    width: calc(100% - 70px);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+#media .contain .item .cont .text .tit {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#media .contain .item .cont .text .sub {
+    /* 设置过渡效果延迟时间 */
+    transition-delay: 0.1s;
+}
+
+
+/* 选中态样式 */
+
+#media .contain .item.active {
+    flex: 1;
+    margin: 0;
+    border-radius: 40px;
+}
+
+#media .contain .item.active .shadow {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.35) 65%, transparent);
+}
+
+#media .contain .item.active .cont {
+    bottom: 20px;
+    left: 20px;
+}
+
+#media .contain .item.active .cont .text div {
+    opacity: 1;
+}

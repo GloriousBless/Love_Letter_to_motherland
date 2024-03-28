@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>代码情书</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <div class="valentines-day">
+        <div class="envelope"></div>
+        <div class="heart"></div>
+        <div class="text"></div>
+        <div class="front"></div>
+        <div class="text2">- my love to motherland - </div>
+    </div>
+    <script>
+        const text = document.querySelector('.text');
+        const txt = ["曾把心灵深相许，祖国亦有在心中。"];
+
+        var index = 0;
+        var xiaBiao = 0;
+        var huan = true;
+
+        setInterval(function() {
+
+            if (huan) {
+                text.innerHTML = txt[xiaBiao].slice(0, ++index);
+                console.log(index);
+            } else {
+                text.innerHTML = txt[xiaBiao].slice(0, index--);
+                console.log(index);
+            }
+        }, 200)
+    </script>
+</body>
+
+</html>

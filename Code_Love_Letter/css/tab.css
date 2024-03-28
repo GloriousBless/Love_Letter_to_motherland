@@ -1,0 +1,48 @@
+.stick {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+}
+
+.diret {
+    height: 100px;
+    list-style: none;
+    background-color: rgb(210, 50, 51);
+    margin: 0;
+    border: 0;
+    border-radius: 10px;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+}
+
+.part {
+    width: 20%;
+    float: left;
+    position: relative;
+    font-family: 'KaiTi';
+    color: white;
+    font-size: 25px;
+    flex-direction: column;
+    text-align: center;
+    top: 35px;
+    cursor: pointer;
+}
+
+.diret img {
+    position: relative;
+    left: -50px;
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+a {
+    TEXT-DECORATION: none;
+    color: white;
+}
